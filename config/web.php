@@ -13,14 +13,6 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
-        'assetManager' => [
-            'converter' => [
-                'class' => 'yii\web\AssetConverter',
-                'commands' => [
-                    'scss' => ['css', 'sass {from} {to}'],
-                ],
-            ],
-        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'J9D7euFVTJwsNnXAtwx1HEpAY4Nz4M6j',
@@ -77,7 +69,6 @@ $config = [
     ],
     'params' => $params,
     'language' => 'es-ES',
-    'defaultRoute' => 'game/index'
 ];
 
 if (YII_ENV_DEV) {

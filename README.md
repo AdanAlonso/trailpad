@@ -9,6 +9,3 @@ Backlog for video games with Yii2
 * Search games by state
 * Import from Google Spreadsheet (csv)
 * App name!
-* Front end design
-* Login
-* Deployment
