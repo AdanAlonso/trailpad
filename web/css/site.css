@@ -136,3 +136,10 @@ a.desc:after {
 .state-ignored {
     background-color: #9C27B0;
 }
+
+.game .cover {
+    display: block;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}

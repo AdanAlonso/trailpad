@@ -2,10 +2,8 @@
   use yii\helpers\Url;
 ?>
 
-<div class="thumbnail" title="<?= $model->title ?>">
-    <a href="<?= Url::to(['update', 'id' => $model->id]) ?>">
-      <img src="https://via.placeholder.com/1024x768" alt="<?= $model->title ?>">
-    </a>
+<div class="thumbnail game" title="<?= $model->title ?>">
+    <a class="cover" href="<?= Url::to(['update', 'id' => $model->id]) ?>"></a>
     <div class="caption">
       <h3 class="text-truncate">
         <a href="<?= Url::to(['update', 'id' => $model->id]) ?>"><?= $model->title ?></a>
