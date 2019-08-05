@@ -79,9 +79,9 @@ class GameSearch extends Game
 
         $query->andFilterWhere(['like', 'title', $this->title]);
 
-        $query->andFilterWhere(['LIKE', 'platform.name', $this->getAttribute('platform.name')]);
+        $query->andFilterWhere(['like', 'platform.name', $this->getAttribute('platform.name')]);
 
-        $query->andFilterWhere(['LIKE', 'state', $this->getAttribute('state')]);
+        $query->andFilterWhere(['like', 'state', $this->getAttribute('state')]);
 
         return $dataProvider;
     }

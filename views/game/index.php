@@ -11,6 +11,12 @@ $this->title = Yii::t('app', 'Games');
 $this->params['breadcrumbs'][] = $this->title;
 
 use app\models\Game;
+
+use app\models\Platform;
+$platforms = Platform::find()
+             ->select(['name'])
+             ->indexBy('name')
+             ->column();
 ?>
 <div class="game-index">
 
@@ -33,6 +39,7 @@ use app\models\Game;
             [
               'label' => Yii::t('app', 'Platform ID'),
               'attribute' => 'platform.name',
+              'filter' => $platforms
             ],
             [
               'label' => Yii::t('app', 'State'),
