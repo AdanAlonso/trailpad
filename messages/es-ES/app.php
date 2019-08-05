@@ -4,5 +4,7 @@
 * Translation map for es-ES
 */
 return [
-    'Name' => 'Nombre'
+    'Name' => 'Nombre',
+    'Title' => 'Título',
+    'Platform ID' => 'Plataforma'
 ];
