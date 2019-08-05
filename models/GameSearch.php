@@ -14,11 +14,20 @@ class GameSearch extends Game
     /**
      * {@inheritdoc}
      */
+    public function attributes()
+    {
+        // add related fields to searchable attributes
+        return array_merge(parent::attributes(), ['platform.name']);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function rules()
     {
         return [
             [['id', 'platform_id'], 'integer'],
-            [['title'], 'safe'],
+            [['title', 'platform.name'], 'safe'],
         ];
     }
 
@@ -41,12 +50,18 @@ class GameSearch extends Game
     public function search($params)
     {
         $query = Game::find();
+        $query->joinWith('platform AS platform');
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['platform.name'] = [
+            'asc' => ['platform.name' => SORT_ASC],
+            'desc' => ['platform.name' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -63,6 +78,8 @@ class GameSearch extends Game
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title]);
+
+        $query->andFilterWhere(['LIKE', 'platform.name', $this->getAttribute('platform.name')]);
 
         return $dataProvider;
     }
