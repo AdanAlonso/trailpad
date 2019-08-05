@@ -6,5 +6,8 @@ Backlog for video games with Yii2
 
 ## To-do
 
-* Import from Google Spreadsheet (csv)
 * App name!
+* Improve UI
+* Deploy
+* Group game versions per console
+* Platform variants (DLC, VC)
