@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use yii\widgets\ListView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\GameSearch */
@@ -27,29 +27,14 @@ $platforms = Platform::find()
     </p>
 
     <?php Pjax::begin(); ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'title',
-            [
-              'label' => Yii::t('app', 'Platform ID'),
-              'attribute' => 'platform.name',
-              'filter' => $platforms
-            ],
-            [
-              'label' => Yii::t('app', 'State'),
-              'attribute' => 'state',
-              'value' => function($data) { return $data->state_label(); },
-              'filter' => Game::states()
-            ],
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
+    <?= ListView::widget([
+      'dataProvider' => $dataProvider,
+      'itemView' => '_game',
+      'itemOptions' => [
+        'class' => 'col-sm-12 col-md-3'
+      ],
+      'layout' => '<div class="row"><div class="col-sm-12">{summary}</div></div><div class="row">{items}</div><div class="row"><div class="col-sm-12">{pager}</div></div>'
     ]); ?>
 
     <?php Pjax::end(); ?>

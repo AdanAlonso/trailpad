@@ -113,3 +113,26 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* States */
+.state-new {
+    background-color: #4CAF50;
+}
+.state-started {
+    background-color: #F44336;
+}
+.state-finished {
+    background-color: #9E9E9E;
+}
+.state-completed {
+    background-color: #FFA000;
+}
+.state-ignored {
+    background-color: #9C27B0;
+}
