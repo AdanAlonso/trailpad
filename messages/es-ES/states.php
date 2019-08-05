@@ -5,5 +5,8 @@
 */
 return [
     'New' => 'Nuevo',
-    'Completed' => 'Completado'
+    'Started' => 'Empezado',
+    'Finished' => 'Terminado',
+    'Completed' => 'Completado',
+    'Ignored' => 'Ignorado',
 ];

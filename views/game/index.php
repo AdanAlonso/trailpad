@@ -9,6 +9,8 @@ use yii\widgets\Pjax;
 
 $this->title = Yii::t('app', 'Games');
 $this->params['breadcrumbs'][] = $this->title;
+
+use app\models\Game;
 ?>
 <div class="game-index">
 
@@ -34,7 +36,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
               'label' => Yii::t('app', 'State'),
+              'attribute' => 'state',
               'value' => function($data) { return $data->state_label(); },
+              'filter' => Game::states()
             ],
 
             ['class' => 'yii\grid\ActionColumn'],

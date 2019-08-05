@@ -33,7 +33,10 @@ class Game extends \yii\db\ActiveRecord
     {
         return [
           'New' => Yii::t('app/states', 'New'),
-          'Completed' => Yii::t('app/states', 'Completed')
+          'Started' => Yii::t('app/states', 'Started'),
+          'Finished' => Yii::t('app/states', 'Finished'),
+          'Completed' => Yii::t('app/states', 'Completed'),
+          'Ignored' => Yii::t('app/states', 'Ignored'),
         ];
     }
 
