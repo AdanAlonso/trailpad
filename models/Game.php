@@ -10,6 +10,7 @@ use Yii;
  * @property int $id
  * @property int $platform_id
  * @property string $title
+ * @property string $state
  *
  * @property Platform $platform
  */
@@ -24,12 +25,35 @@ class Game extends \yii\db\ActiveRecord
     }
 
     /**
+     * Possible states for a Game.
+     *
+     * @return array
+     */
+    public static function states()
+    {
+        return [
+          'New' => Yii::t('app/states', 'New'),
+          'Completed' => Yii::t('app/states', 'Completed')
+        ];
+    }
+
+    /**
+     * Translated label for state.
+     *
+     * @return string
+     */
+    public function state_label()
+    {
+        return Yii::t('app/states', $this->state);
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['platform_id'], 'required'],
+            [['title', 'platform_id', 'state'], 'required'],
             [['platform_id'], 'integer'],
             [['title'], 'string', 'max' => 255],
             [['platform_id'], 'exist', 'skipOnError' => true, 'targetClass' => Platform::className(), 'targetAttribute' => ['platform_id' => 'id']],
@@ -45,6 +69,7 @@ class Game extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'platform_id' => Yii::t('app', 'Platform ID'),
             'title' => Yii::t('app', 'Title'),
+            'state' => Yii::t('app', 'State'),
         ];
     }
 

@@ -27,7 +27,7 @@ class GameSearch extends Game
     {
         return [
             [['id', 'platform_id'], 'integer'],
-            [['title', 'platform.name'], 'safe'],
+            [['title', 'platform.name', 'state'], 'safe'],
         ];
     }
 

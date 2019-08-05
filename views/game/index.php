@@ -32,6 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
               'label' => Yii::t('app', 'Platform ID'),
               'attribute' => 'platform.name',
             ],
+            [
+              'label' => Yii::t('app', 'State'),
+              'value' => function($data) { return $data->state_label(); },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

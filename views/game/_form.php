@@ -15,6 +15,8 @@ $platforms = Platform::find()
              ->select(['name'])
              ->indexBy('id')
              ->column();
+
+$states = $model::states();
 ?>
 
 <div class="game-form">
@@ -24,6 +26,8 @@ $platforms = Platform::find()
     <?= $form->field($model, 'platform_id')->widget(Select2::classname(), ['data' => $platforms]) ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'state')->widget(Select2::classname(), ['data' => $states]) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

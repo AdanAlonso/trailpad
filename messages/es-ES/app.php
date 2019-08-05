@@ -6,5 +6,6 @@
 return [
     'Name' => 'Nombre',
     'Title' => 'Título',
-    'Platform ID' => 'Plataforma'
+    'Platform ID' => 'Plataforma',
+    'State' => 'Estado'
 ];
