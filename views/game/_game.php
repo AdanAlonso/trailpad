@@ -9,6 +9,6 @@
         <a href="<?= Url::to(['update', 'id' => $model->id]) ?>"><?= $model->title ?></a>
       </h3>
       <span class="label label-platform"><?= $model->platform->name ?></span>
-      <span class="label label-state state-<?= strtolower($model->state) ?>"><?= $model->state_label() ?></span>
+      <span class="label label-state state-<?= strtolower($model->state) ?>"><?= $model->stateLabel() ?></span>
     </div>
 </div>

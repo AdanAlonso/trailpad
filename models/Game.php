@@ -45,7 +45,7 @@ class Game extends \yii\db\ActiveRecord
      *
      * @return string
      */
-    public function state_label()
+    public function stateLabel()
     {
         return Yii::t('app/states', $this->state);
     }

@@ -31,6 +31,15 @@ class Platform extends \yii\db\ActiveRecord
         ];
     }
 
+    public function gameCount()
+    {
+        return $this->getGames()->count();
+    }
+
+    public function getGames(){
+        return $this->hasMany(Game::className(), ['platform_id' => 'id']);
+    }
+
     /**
      * {@inheritdoc}
      */
