@@ -17,14 +17,16 @@ function require_auth() {
 	}
 }
 
-if(getenv('PRODUCTION') == 'true') {
+if(getenv('PRODUCTION')) {
   require_auth();
+  defined('YII_DEBUG') or define('YII_DEBUG', true);
+  defined('YII_ENV') or define('YII_ENV', 'dev');
 } else {
   defined('YII_DEBUG') or define('YII_DEBUG', true);
   defined('YII_ENV') or define('YII_ENV', 'dev');
-  $_ENV['DB_DSN'] = 'mysql:host=localhost;dbname=backlog';
-  $_ENV['DB_USER'] = 'root';
-  $_ENV['DB_PASS'] = '';
+  putenv('DB_DSN=mysql:host=localhost;dbname=backlog');
+  putenv('DB_USER=root');
+  putenv('DB_PASS=');
 }
 
 require __DIR__ . '/../vendor/autoload.php';
