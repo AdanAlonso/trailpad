@@ -23,7 +23,7 @@ $platforms = Platform::find()
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Game'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Game'), ['create'], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -32,9 +32,16 @@ $platforms = Platform::find()
       'dataProvider' => $dataProvider,
       'itemView' => '_game',
       'itemOptions' => [
-        'class' => 'col-sm-12 col-md-3'
+        'class' => 'col-sm-12 col-md-6 col-lg-3'
       ],
-      'layout' => '<div class="row"><div class="col-sm-12">{summary}</div></div><div class="row">{items}</div><div class="row"><div class="col-sm-12">{pager}</div></div>'
+      'layout' => '<div class="row"><div class="col-sm-12">{summary}</div></div><div class="row">{items}</div><div class="row"><div class="col-sm-12">{pager}</div></div>',
+      'pager' => [
+        'firstPageLabel' => '«',
+        'lastPageLabel' => '»',
+        'prevPageLabel' => '‹',
+        'nextPageLabel' => '›',
+        'maxButtonCount' => 3,
+      ],
     ]); ?>
 
     <?php Pjax::end(); ?>

@@ -21,6 +21,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet">
     <?php $this->head() ?>
 </head>
 <body>
@@ -38,8 +39,8 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Games', 'url' => ['/game/index']],
-            ['label' => 'Platforms', 'url' => ['/platform/index']]
+            ['label' => Yii::t('app', 'Games'), 'url' => ['/game/index']],
+            ['label' => Yii::t('app', 'Platforms'), 'url' => ['/platform/index']]
         ],
     ]);
     NavBar::end();

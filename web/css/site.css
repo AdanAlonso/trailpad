@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .wrap {
@@ -120,26 +121,90 @@ a.desc:after {
     white-space: nowrap;
 }
 
-/* States */
-.state-new {
+.pagination {
+    float: right;
+}
+
+.right {
+    float: right!important;
+}
+
+.breadcrumb > li + li:before {
+    content: "»";
+}
+
+.summary {
+    margin: 0.2em 0 1em;
+    font-size: 0.8em;
+    color: #222222;
+}
+
+/* Game cards */
+.game.thumbnail {
+    padding: 0;
+    border-bottom: 0.2em solid;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    border-radius: 2px;
+}
+.game.thumbnail.state-new {
+    border-bottom-color: #4CAF50;
+}
+.game.thumbnail.state-started {
+    border-bottom-color: #F44336;
+}
+.game.thumbnail.state-finished {
+    border-bottom-color: #9E9E9E;
+}
+.game.thumbnail.state-completed {
+    border-bottom-color: #FFA000;
+}
+.game.thumbnail.state-ignored {
+    border-bottom-color: #9C27B0;
+}
+
+.game.thumbnail .cover {
+    display: block;
+    height: 260px;
+    background-position: center;
+    background-size: cover;
+    background-color: #E0E0E0;
+    background-image: url(https://picsum.photos/800);
+}
+
+.game.thumbnail h3 {
+    margin: 0.3em 0 0.5em;
+    font-size: 1.3em;
+}
+
+.game.thumbnail h3 a {
+    color: #222222;
+}
+
+.game.thumbnail h3 a:hover {
+    text-decoration: none;
+}
+
+.label.label-state, .label.label-platform {
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+.label.state-new {
     background-color: #4CAF50;
 }
-.state-started {
+.label.state-started {
     background-color: #F44336;
 }
-.state-finished {
+.label.state-finished {
     background-color: #9E9E9E;
 }
-.state-completed {
+.label.state-completed {
     background-color: #FFA000;
 }
-.state-ignored {
+.label.state-ignored {
     background-color: #9C27B0;
 }
 
-.game .cover {
-    display: block;
-    height: 300px;
-    background-position: center;
-    background-size: cover;
+.label.label-platform {
+    background-color: #383838;
 }
