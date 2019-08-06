@@ -164,7 +164,7 @@ a.desc:after {
 
 .game.thumbnail .cover {
     display: block;
-    height: 260px;
+    /* height: 260px; */
     background-position: center;
     background-size: cover;
     background-color: #E0E0E0;
