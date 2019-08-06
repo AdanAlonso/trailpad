@@ -39,7 +39,8 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "yii\\composer\\Installer::postInstall"
+            "yii\\composer\\Installer::postInstall",
+            "yii migrate/up --interactive=0"
         ],
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
