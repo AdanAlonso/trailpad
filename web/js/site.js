@@ -1,5 +1,5 @@
 $(function() {
-  getGameCovers();
+  // getGameCovers();
 });
 
 function getGameCovers() {
