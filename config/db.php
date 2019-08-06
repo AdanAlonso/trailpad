@@ -1,5 +1,11 @@
 <?php
 
+if(!getenv('PRODUCTION')) {
+    putenv('DB_DSN=mysql:host=localhost;dbname=backlog');
+    putenv('DB_USER=root');
+    putenv('DB_PASS=');
+}
+
 return [
     'class' => 'yii\db\Connection',
     'dsn' => getenv('DB_DSN'),

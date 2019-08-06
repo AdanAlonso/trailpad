@@ -23,9 +23,6 @@ if(getenv('PRODUCTION')) {
 } else {
   defined('YII_DEBUG') or define('YII_DEBUG', true);
   defined('YII_ENV') or define('YII_ENV', 'dev');
-  putenv('DB_DSN=mysql:host=localhost;dbname=backlog');
-  putenv('DB_USER=root');
-  putenv('DB_PASS=');
 }
 
 require __DIR__ . '/../vendor/autoload.php';
