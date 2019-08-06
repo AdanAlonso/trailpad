@@ -1,6 +1,6 @@
 <?php
 
-if(!getenv('PRODUCTION')) {
+if(getenv('ENV') != 'Production') {
     putenv('DB_DSN=mysql:host=localhost;dbname=backlog');
     putenv('DB_USER=root');
     putenv('DB_PASS=');

@@ -17,7 +17,7 @@ function require_auth() {
 	}
 }
 
-if(getenv('PRODUCTION')) {
+if(getenv('ENV') == 'Production') {
   require_auth();
   defined('YII_DEBUG') or define('YII_DEBUG', true);
 } else {
