@@ -17,13 +17,14 @@ function require_auth() {
 	}
 }
 
-if(getenv('PRODUCTION')) {
-  // Production environment
+if(getenv('PRODUCTION') == 'true') {
   require_auth();
 } else {
-  // Development environment
   defined('YII_DEBUG') or define('YII_DEBUG', true);
   defined('YII_ENV') or define('YII_ENV', 'dev');
+  $_ENV['DB_DSN'] = 'mysql:host=localhost;dbname=backlog';
+  $_ENV['DB_USER'] = 'root';
+  $_ENV['DB_PASS'] = '';
 }
 
 require __DIR__ . '/../vendor/autoload.php';
