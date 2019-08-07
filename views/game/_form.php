@@ -45,7 +45,9 @@ $dataProvider = new ActiveDataProvider([
             <?= $form->field($model, 'platform_id')->widget(Select2::classname(), ['data' => $platforms]) ?>
         </div>
         <div class="col-sm-12 col-md-3">
-            <?= $form->field($model, 'state')->widget(Select2::classname(), ['data' => $states]) ?>
+            <span class="state-select state-<?= strtolower($model->state) ?>"
+                <?= $form->field($model, 'state')->widget(Select2::classname(), ['data' => $states]) ?>
+            </span>
         </div> 
     </div>
 

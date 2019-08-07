@@ -212,3 +212,26 @@ a.desc:after {
 .label.label-dlcs {
     background-color: #337ab7;
 }
+
+.state-select .select2-container--krajee .select2-selection--single .select2-selection__rendered {
+    color: white;
+    padding: 0.2em 0.6em 0.3em;
+    border-radius: 0.25em;
+    line-height: 1;
+    display: inline;
+}
+.state-new .select2-container--krajee .select2-selection--single .select2-selection__rendered, .state- .select2-container--krajee .select2-selection--single .select2-selection__rendered {
+    background-color: #4CAF50;
+}
+.state-started .select2-container--krajee .select2-selection--single .select2-selection__rendered {
+    background-color: #F44336;
+}
+.state-finished .select2-container--krajee .select2-selection--single .select2-selection__rendered {
+    background-color: #9E9E9E;
+}
+.state-completed .select2-container--krajee .select2-selection--single .select2-selection__rendered {
+    background-color: #FFA000;
+}
+.state-ignored .select2-container--krajee .select2-selection--single .select2-selection__rendered {
+    background-color: #9C27B0;
+}
