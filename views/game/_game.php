@@ -10,5 +10,8 @@
       </h3>
       <span class="label label-platform"><?= $model->platform->name ?></span>
       <span class="label label-state state-<?= strtolower($model->state) ?>"><?= $model->stateLabel() ?></span>
+      <?php if($model->getDlcs()->count()) { ?>
+        <span class="label label-dlcs"><?= Yii::t('app', 'DLCs: {count}', ['count' => $model->getDlcs()->count()]); ?></span>
+      <?php } ?>
     </div>
 </div>

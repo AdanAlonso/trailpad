@@ -184,7 +184,7 @@ a.desc:after {
     text-decoration: none;
 }
 
-.label.label-state, .label.label-platform {
+.label.label-state, .label.label-platform, .label.label-dlcs {
     font-size: 0.8em;
     font-weight: normal;
 }
@@ -207,4 +207,8 @@ a.desc:after {
 
 .label.label-platform {
     background-color: #383838;
+}
+
+.label.label-dlcs {
+    background-color: #337ab7;
 }

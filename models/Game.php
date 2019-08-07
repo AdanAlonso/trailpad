@@ -57,9 +57,10 @@ class Game extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'platform_id', 'state'], 'required'],
-            [['platform_id'], 'integer'],
+            [['platform_id', 'dlc_of_id'], 'integer'],
             [['title'], 'string', 'max' => 255],
             [['platform_id'], 'exist', 'skipOnError' => true, 'targetClass' => Platform::className(), 'targetAttribute' => ['platform_id' => 'id']],
+            [['dlc_of_id'], 'exist', 'skipOnError' => true, 'targetClass' => Game::className(), 'targetAttribute' => ['dlc_of_id' => 'id']],
         ];
     }
 
@@ -90,5 +91,13 @@ class Game extends \yii\db\ActiveRecord
     public function getDlcOf()
     {
         return $this->hasOne(Game::className(), ['id' => 'dlc_of_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDlcs()
+    {
+        return $this->hasMany(Game::className(), ['dlc_of_id' => 'id']);
     }
 }
