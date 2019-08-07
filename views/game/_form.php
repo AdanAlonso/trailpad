@@ -1,6 +1,4 @@
 <?php
-
-use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -65,21 +63,7 @@ $dataProvider = new ActiveDataProvider([
         </div> 
     </div>
 
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Cancel'), ['index'], [
-            'class' => 'btn btn-default',
-        ]) ?>
-        <?php if($model->id) { ?>
-            <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
-                'class' => 'btn btn-danger right',
-                'data' => [
-                    'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
-                    'method' => 'post',
-                ],
-            ]) ?>
-        <?php } ?>
-    </div>
+    <?= Yii::$app->controller->renderPartial('/shared/_form_actions', ['model' => $model]); ?>
 
     <?php if($model->id && $model->getDlcs()->count()) { ?>
         <h2>DLCs</h2>
