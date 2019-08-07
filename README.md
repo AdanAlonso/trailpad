@@ -9,7 +9,7 @@ Backlog for video games with Yii2
 * App name!
 * Automatic migrations when deploying (instead of having to log in, run "composer install; php yii migrate")
 * Group game versions per console
-* Platform variants (DLC, VC)
+* Virtual Console games
 * GiantBomb API through server (hide API key)
 * Cache cover images in server
 * User login in app (instead of http basic auth)

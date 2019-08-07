@@ -26,5 +26,6 @@ return [
     'Updated error' => 'Ha ocurrido un error al editar.',
     'Created error' => 'Ha ocurrido un error al crear.',
     'Dlc of ID' => 'DLC de',
-    'DLCs: {count}' => 'DLCs: {count}',
+    'DLCs' => 'DLCs: {count}',
+    'DLC Platform' => '{name} (DLC)',
 ];
