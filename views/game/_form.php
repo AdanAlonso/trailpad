@@ -21,14 +21,6 @@ $games = $model::find()
         ->indexBy('id')
         ->orderBy('title')
         ->column();
-
-use yii\data\ActiveDataProvider;
-$dataProvider = new ActiveDataProvider([
-    'query' => $model::find()->where(['dlc_of_id' => $model->id])->orderBy('title'),
-    'pagination' => [
-        'pageSize' => 10,
-    ],
-]);
 ?>
 
 <div class="game-form">
@@ -36,21 +28,19 @@ $dataProvider = new ActiveDataProvider([
     <?php $form = ActiveForm::begin(); ?>
 
     <div class="row">
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12">
             <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
         </div>
-        <div class="col-sm-12 col-md-3">
-            <?= $form->field($model, 'platform_id')->widget(Select2::classname(), ['data' => $platforms]) ?>
-        </div>
-        <div class="col-sm-12 col-md-3">
-            <span class="state-select state-<?= strtolower($model->state) ?>"
-                <?= $form->field($model, 'state')->widget(Select2::classname(), ['data' => $states]) ?>
-            </span>
-        </div> 
     </div>
 
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12 col-md-4">
+            <?= $form->field($model, 'platform_id')->widget(Select2::classname(), ['data' => $platforms]) ?>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <?= $form->field($model, 'state')->widget(Select2::classname(), ['data' => $states]) ?>
+        </div> 
+        <div class="col-sm-12 col-md-4">
         <?= $form->field($model, 'dlc_of_id')->label(Yii::t('app', 'Dlc of ID'))->widget(Select2::classname(), [
               'data' => $games,
               'options' => [
@@ -64,11 +54,6 @@ $dataProvider = new ActiveDataProvider([
     </div>
 
     <?= Yii::$app->controller->renderPartial('/shared/_form_actions', ['model' => $model]); ?>
-
-    <?php if($model->id && $model->getDlcs()->count()) { ?>
-        <h2>DLCs</h2>
-        <?= Yii::$app->controller->renderPartial('_index', ['dataProvider' => $dataProvider]); ?>
-    <?php } ?>
 
     <?php ActiveForm::end(); ?>
 
