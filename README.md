@@ -12,4 +12,5 @@ Backlog for video games with Yii2
 * Platform variants (DLC, VC)
 * GiantBomb API through server (hide API key)
 * Cache cover images in server
-* User login
+* User login in app (instead of http basic auth)
+* Stats per platform and state

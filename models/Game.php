@@ -83,4 +83,12 @@ class Game extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Platform::className(), ['id' => 'platform_id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDlcOf()
+    {
+        return $this->hasOne(Game::className(), ['id' => 'dlc_of_id']);
+    }
 }
