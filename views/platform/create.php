@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Platform */
 
-$this->title = 'Create Platform';
-$this->params['breadcrumbs'][] = ['label' => 'Platforms', 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Platform');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Platforms'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="platform-create">

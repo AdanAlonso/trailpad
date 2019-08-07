@@ -21,4 +21,8 @@ return [
     'Are you sure you want to delete this item?' => '¿Eliminar este elemento?',
     'Search' => 'Buscar',
     'Clear' => 'Limpiar',
+    'Updated success' => 'Editado con éxito.',
+    'Created success' => 'Creado con éxito.',
+    'Updated error' => 'Ha ocurrido un error al editar.',
+    'Created error' => 'Ha ocurrido un error al crear.',
 ];
