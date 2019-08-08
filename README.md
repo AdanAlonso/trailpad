@@ -1,4 +1,4 @@
-# BACKLOG (naming pending)
+# TRAILPAD
 
 ## About
 
@@ -8,7 +8,6 @@ Backlog for video games with Yii2
 ## To-do
 
 ### High priority
-* App name!
 * Stats per platform and state
 * Virtual Console games
 * Add timestamps to tables

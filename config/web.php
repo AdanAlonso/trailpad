@@ -4,8 +4,8 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'backlog',
-    'name' => 'Backlog',
+    'id' => 'trailpad',
+    'name' => 'Trailpad',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
