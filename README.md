@@ -4,14 +4,18 @@
 
 Backlog for video games with Yii2
 
+
 ## To-do
 
+### High priority
 * App name!
-* Automatic migrations when deploying (instead of having to log in, run "composer install; php yii migrate")
-* Group game versions per console
-* Virtual Console games
-* GiantBomb API through server (hide API key)
-* Cache cover images in server
-* User login in app (instead of http basic auth)
 * Stats per platform and state
+* Virtual Console games
+* Add timestamps to tables
+
+### Low priority
+* Automatic migrations when deploying to Heroku (instead of having to log in, run "composer install; php yii migrate"; investigate composer post-install-cmd scripting)
+* Group game versions per console
+* Get game covers through GiantBomb API
+* User login in app (instead of http basic auth)
 * URLs with slug instead of id
