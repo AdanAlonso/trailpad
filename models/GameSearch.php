@@ -50,9 +50,10 @@ class GameSearch extends Game
     public function search($params)
     {
         $query = Game::find();
-        $query->joinWith('platform AS platform');
 
         // add conditions that should always apply here
+        $query->joinWith('platform AS platform')
+              ->andWhere(['dlc_of_id' => null]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

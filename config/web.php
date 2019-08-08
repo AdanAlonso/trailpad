@@ -69,6 +69,7 @@ $config = [
     ],
     'params' => $params,
     'language' => 'es-ES',
+    'defaultRoute' => 'game/index',
 ];
 
 if (YII_ENV_DEV) {

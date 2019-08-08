@@ -14,3 +14,4 @@ Backlog for video games with Yii2
 * Cache cover images in server
 * User login in app (instead of http basic auth)
 * Stats per platform and state
+* URLs with slug instead of id
