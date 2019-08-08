@@ -115,6 +115,16 @@ a.desc:after {
     outline: none;
 }
 
+.navbar-brand {
+    color: white!important;
+}
+
+.navbar-brand > img {
+    height: 1.4em;
+    display: inline;
+    padding-right: 0.5em;
+}
+
 .text-truncate {
     overflow: hidden;
     text-overflow: ellipsis;
