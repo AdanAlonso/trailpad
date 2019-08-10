@@ -18,3 +18,4 @@ Backlog for video games with Yii2
 * Get game covers through GiantBomb API (use Cloudinary for storage)
 * User login in app (instead of http basic auth)
 * URLs with slug instead of id
+* PWA doesn't work in production (maybe due to http basic auth?)
