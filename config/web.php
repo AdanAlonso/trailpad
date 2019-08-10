@@ -66,6 +66,10 @@ $config = [
                 ],
             ],
         ],
+        'assetsAutoCompress' =>
+        [
+            'class'         => '\skeeks\yii2\assetsAuto\AssetsAutoCompressComponent',
+        ],
     ],
     'params' => $params,
     'language' => 'es-ES',

@@ -28,6 +28,10 @@ AppAsset::register($this);
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#222222">
     <meta name="msapplication-TileColor" content="#222222">
     <meta name="theme-color" content="#222222">
+    <meta name="Description" content="Track your video game collection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Trailpad">
     <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet">
     <?php $this->head() ?>
 </head>
@@ -37,7 +41,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => '<img src="images/logo.png">'.Yii::$app->name,
+        'brandLabel' => '<img src="images/logo.png" alt="logo">'.Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',

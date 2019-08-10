@@ -3,7 +3,7 @@
 ?>
 
 <div class="thumbnail game state-<?= strtolower($model->state) ?>" title="<?= $model->title ?>">
-    <a class="cover" href="<?= Url::to(['update', 'id' => $model->id]) ?>"></a>
+    <a class="cover" aria-label="<?= $model->title ?>" href="<?= Url::to(['update', 'id' => $model->id]) ?>"></a>
     <div class="caption">
       <h3 class="text-truncate">
         <a href="<?= Url::to(['update', 'id' => $model->id]) ?>"><?= $model->title ?></a>
