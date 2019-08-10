@@ -1,6 +1,6 @@
 $(function() {
   // getGameCovers();
-  // registerServiceWorker();
+  registerServiceWorker();
 });
 
 function getGameCovers() {
