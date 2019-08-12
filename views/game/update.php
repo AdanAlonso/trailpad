@@ -22,8 +22,8 @@ $dataProvider = new ActiveDataProvider([
 <div class="game-update">
 
     <div class="row">
-        <div class="col-sm-12 col-md-3"><?= Yii::$app->controller->renderPartial('_game', ['model' => $model]); ?></div>
-        <div class="col-sm-12 col-md-9">
+        <div class="col-sm-12 col-md-4"><?= Yii::$app->controller->renderPartial('_game', ['model' => $model]); ?></div>
+        <div class="col-sm-12 col-md-8">
             <h1><?= Html::encode($this->title) ?></h1>
 
             <?= $this->render('_form', [
