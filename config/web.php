@@ -93,4 +93,11 @@ if (YII_ENV_DEV) {
     ];
 }
 
+\Cloudinary::config(array( 
+    "cloud_name" => getenv('CLOUD_NAME'), 
+    "api_key" => getenv('CLOUD_API'), 
+    "api_secret" => getenv('CLOUD_SECRET'), 
+    "secure" => true
+));
+
 return $config;

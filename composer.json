@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "kartik-v/yii2-widget-select2": "@dev",
         "ivanovyordan/yii2-migration": "*",
-        "skeeks/yii2-assets-auto-compress": "*"
+        "skeeks/yii2-assets-auto-compress": "*",
+        "cloudinary/cloudinary_php": "^1.14"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

@@ -106,11 +106,6 @@ class Game extends \yii\db\ActiveRecord
         return $this->hasMany(Game::className(), ['dlc_of_id' => 'id']);
     }
 
-    public function cover_path()
-    {
-        return self::$uploads_folder . "$this->id.jpg";
-    }
-
     /**
      * Uses downloaded image cover, or tries to get it from the API
      *
@@ -118,27 +113,19 @@ class Game extends \yii\db\ActiveRecord
      */
     public function getCover()
     {
-        if(!file_exists($this->cover_path())) {
-            $this->downloadCover();
+        if($this->cover == null) {
+            return $this->downloadCover();
         }
-        return $this->cover_path();
+        return $this->cover;
     }
 
     public function downloadCover()
     {
-        $source = $this->getCoverfromAPI();
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'http:' . $source);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_SSLVERSION, 3);
-        $data = curl_exec($curl);
-        $error = curl_error($curl); 
-        curl_close($curl);
-        
-        $destination = realpath(Yii::$app->basePath) . '/web/' . $this->cover_path();
-        $file = fopen($destination, 'w+');
-        fputs($file, $data);
-        fclose($file);
+        if(getenv('CLOUD_NAME') == null)
+            return;
+        $result = \Cloudinary\Uploader::upload('http:' . $this->getCoverfromAPI(), array("public_id" => "game_cover_$this->id"));
+        $this->cover = $result['secure_url'];
+        $this->save();
     }
 
     /**

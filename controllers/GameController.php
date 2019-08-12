@@ -76,14 +76,13 @@ class GameController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             if ($model->save()) {
+                $model->downloadCover();
                 Yii::$app->session->setFlash('success', Yii::t('app', 'Updated success'));
             } else {
                 Yii::$app->session->setFlash('error', Yii::t('app', 'Updated error'));
             }
             return $this->redirect(['update', 'id' => $model->id]);
         }
-
-        $model->downloadCover();
 
         return $this->render('update', [
             'model' => $model,
