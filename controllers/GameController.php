@@ -37,6 +37,7 @@ class GameController extends Controller
     {
         $searchModel = new GameSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize = 12;
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -86,6 +87,14 @@ class GameController extends Controller
             'model' => $model,
         ]);
     }
+    
+    public function actionCover($id)
+    {
+        $model = $this->findModel($id);
+
+        return $model->getCover();
+    }
+
 
     /**
      * Deletes an existing Game model.

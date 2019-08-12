@@ -63,10 +63,6 @@ $platforms = Platform::find()
       </div>
     <?php ActiveForm::end(); ?>
 
-    <?php Pjax::begin(); ?>
-
     <?= Yii::$app->controller->renderPartial('_index', ['dataProvider' => $dataProvider]); ?>
-
-    <?php Pjax::end(); ?>
 
 </div>

@@ -2,12 +2,14 @@
   use yii\helpers\Url;
 ?>
 
-<div class="thumbnail game state-<?= strtolower($model->state) ?>" title="<?= $model->title ?>">
+<div class="thumbnail game state-<?= strtolower($model->state) ?>" title="<?= $model->title ?>" data-id="<?= $model->id ?>">
     <a class="cover" aria-label="<?= $model->title ?>" href="<?= Url::to(['update', 'id' => $model->id]) ?>"></a>
     <div class="caption">
       <h3 class="text-truncate">
         <a href="<?= Url::to(['update', 'id' => $model->id]) ?>"><?= $model->title ?></a>
       </h3>
+    </div>
+    <div class="caption labels">
       <?php if($model->dlc_of_id) { ?>
         <span class="label label-dlcs"><?= Yii::t('app', 'DLC Platform', ['name' => $model->platform->name]) ?></span>
       <?php } else { ?>

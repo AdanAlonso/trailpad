@@ -100,4 +100,32 @@ class Game extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Game::className(), ['dlc_of_id' => 'id']);
     }
+
+    /**
+     * Game cover URL from IGDB API
+     *
+     * @return string
+     */
+    public function getCover()
+    {
+        if(!defined('API_KEY'))
+            return;
+
+        $API_KEY = getenv('API_KEY');
+
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\nuser-key: $API_KEY\r\n",
+                'method'  => 'POST',
+                'content' => "fields id, cover.url; search \"$this->title\"; limit 1;",
+            )
+        );
+        $context  = stream_context_create($options);
+        $result = json_decode(file_get_contents('https://api-v3.igdb.com/games', false, $context), true);
+
+        if(count($result) == 0 || !isset($result[0]['cover']))
+            return;
+        
+        return $result[0]['cover']['url'];
+    }
 }

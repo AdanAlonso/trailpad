@@ -1,5 +1,5 @@
 $(function() {
-  // getGameCovers();
+  getGameCovers();
   registerServiceWorker();
 });
 
@@ -9,21 +9,11 @@ function getGameCovers() {
 
 function getGameCover() {
   var _this = this;
-  var title = $(this).attr('title');
+  var id = $(_this).attr("data-id");
   $.ajax({
-    url: "https://www.giantbomb.com/api/games/",
-    dataType: "jsonp",
-    jsonp: 'json_callback',
-    data: {
-        api_key: '[API KEY]',
-        filter: 'name:' + title,
-        format: 'jsonp',
-        field_list: 'image'
-    },
+    url: "index.php?r=game%2Fcover&id=" + id,
     success: function(res) {
-      if(res.results.length > 0){
-        $(_this).find('.cover').css('background-image', 'url(' + res.results[0].image.medium_url) + ')';
-      }
+      $(_this).find('.cover').css('background-image', 'url(' + res + ')');
     }
   });
 }
