@@ -108,14 +108,14 @@ class Game extends \yii\db\ActiveRecord
      */
     public function getCover()
     {
-        if(!defined('API_KEY'))
-            return;
+        $IGDB_API_KEY = getenv('IGDB_API_KEY');
 
-        $API_KEY = getenv('API_KEY');
+        if($IGDB_API_KEY == null)
+            return;
 
         $options = array(
             'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\nuser-key: $API_KEY\r\n",
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\nuser-key: $IGDB_API_KEY\r\n",
                 'method'  => 'POST',
                 'content' => "fields id, cover.url; search \"$this->title\"; limit 1;",
             )
