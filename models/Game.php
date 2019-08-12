@@ -123,7 +123,7 @@ class Game extends \yii\db\ActiveRecord
     {
         if(getenv('CLOUD_NAME') == null)
             return;
-        $result = \Cloudinary\Uploader::upload('http:' . $this->getCoverfromAPI(), array("public_id" => "game_cover_$this->id"));
+        $result = \Cloudinary\Uploader::upload($this->getCoverfromAPI(), array("public_id" => "game_cover_$this->id"));
         $this->cover = $result['secure_url'];
         $this->save();
     }
@@ -150,9 +150,10 @@ class Game extends \yii\db\ActiveRecord
         $context  = stream_context_create($options);
         $result = json_decode(file_get_contents('https://api-v3.igdb.com/games', false, $context), true);
 
-        if(count($result) == 0 || !isset($result[0]['cover']))
-            return;
+        if(count($result) == 0 || !isset($result[0]['cover'])) {
+            return realpath(Yii::$app->basePath) . '/web/images/logo_square.png';
+        }
         
-        return $result[0]['cover']['url'];
+        return 'http:'. $result[0]['cover']['url'];
     }
 }
