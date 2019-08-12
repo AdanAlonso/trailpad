@@ -33,6 +33,7 @@ AppAsset::register($this);
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Trailpad">
     <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <?php $this->head() ?>
 </head>
 <body>
@@ -51,7 +52,8 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => Yii::t('app', 'Games'), 'url' => ['/game/index']],
-            ['label' => Yii::t('app', 'Platforms'), 'url' => ['/platform/index']]
+            ['label' => Yii::t('app', 'Platforms'), 'url' => ['/platform/index']],
+            ['label' => Yii::t('app', 'Stats'), 'url' => ['/platform/stats']],
         ],
     ]);
     NavBar::end();

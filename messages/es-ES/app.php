@@ -28,4 +28,5 @@ return [
     'Dlc of ID' => 'DLC de',
     'DLCs' => 'DLCs: {count}',
     'DLC Platform' => '{name} (DLC)',
+    'Stats' => 'Estadísticas',
 ];

@@ -113,4 +113,22 @@ class PlatformController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+
+    /**
+     * Statistics
+     * @return mixed
+     */
+    public function actionStats()
+    {
+        $searchModel = new PlatformSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $dataProvider->pagination->pageSize = 50;
+
+        return $this->render('stats', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 }
