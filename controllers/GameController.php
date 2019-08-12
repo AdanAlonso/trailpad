@@ -83,6 +83,8 @@ class GameController extends Controller
             return $this->redirect(['update', 'id' => $model->id]);
         }
 
+        $model->downloadCover();
+
         return $this->render('update', [
             'model' => $model,
         ]);
