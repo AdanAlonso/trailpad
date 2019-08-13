@@ -80,7 +80,7 @@ class GameSearch extends Game
             'platform_id' => $this->platform_id,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title]);
+        $query->andFilterWhere(['like', 'LOWER(title)', strtolower($this->title)]);
 
         $query->andFilterWhere(['or',
             ['=', 'platform.name', $this->getAttribute('platform.name')],
