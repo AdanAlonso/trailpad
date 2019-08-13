@@ -69,6 +69,7 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; Bruno Laplace <?= date('Y') ?></p>
+        <p class="pull-right"><a href="https://api.igdb.com/" target="_blank"><img src="images/igdb_logo.png" alt="IGDB logo"></a></p>
     </div>
 </footer>
 

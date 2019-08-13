@@ -149,6 +149,11 @@ a.desc:after {
     color: #222222;
 }
 
+footer img {
+    height: 12px;
+    vertical-align: initial;
+}
+
 /* Game cards */
 .game.thumbnail {
     border: none;

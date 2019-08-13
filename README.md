@@ -20,3 +20,5 @@ Backlog for video games with Yii2
 * Platform aliases (short names)
 * Page title is inconsistent
 * Better readme?
+* Allow manually uploading game covers, or choosing between alternatives from the api
+* Game aliases (display names vs names to search in the api)
