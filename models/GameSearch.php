@@ -53,11 +53,12 @@ class GameSearch extends Game
 
         // add conditions that should always apply here
         $query->joinWith('platform AS platform')
+              ->joinWith('emulatedPlatform AS emulated_platform')
               ->andWhere(['dlc_of_id' => null]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]]
+            'sort'=> ['defaultOrder' => ['created_at' => SORT_DESC, 'title' => SORT_ASC]]
         ]);
 
         $dataProvider->sort->attributes['platform.name'] = [
@@ -81,9 +82,12 @@ class GameSearch extends Game
 
         $query->andFilterWhere(['like', 'title', $this->title]);
 
-        $query->andFilterWhere(['like', 'platform.name', $this->getAttribute('platform.name')]);
-
-        $query->andFilterWhere(['like', 'state', $this->getAttribute('state')]);
+        $query->andFilterWhere(['or',
+            ['=', 'platform.name', $this->getAttribute('platform.name')],
+            ['=', 'emulated_platform.name', $this->getAttribute('platform.name')]
+        ]);
+        
+        $query->andFilterWhere(['=', 'state', $this->getAttribute('state')]);
 
         return $dataProvider;
     }

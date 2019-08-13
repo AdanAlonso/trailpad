@@ -13,8 +13,11 @@
       <?php if($model->dlc_of_id) { ?>
         <span class="label label-dlcs"><?= Yii::t('app', 'DLC Platform', ['name' => $model->platform->name]) ?></span>
       <?php } else { ?>
-
-        <span class="label label-platform"><?= $model->platform->name ?></span>
+        <?php if($model->emulated_platform_id) { ?>
+          <span class="label label-platform"><?= $model->platform->name ?> (<?= $model->emulatedPlatform->name ?>)</span>
+        <?php } else { ?>
+          <span class="label label-platform"><?= $model->platform->name ?></span>
+        <?php } ?>
       <?php } ?>
       <span class="label label-state state-<?= strtolower($model->state) ?>"><?= $model->stateLabel() ?></span>
       <?php if($model->getDlcs()->count()) { ?>

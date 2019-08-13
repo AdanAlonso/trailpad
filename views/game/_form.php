@@ -34,14 +34,27 @@ $games = $model::find()
     </div>
 
     <div class="row">
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-6">
             <?= $form->field($model, 'platform_id')->widget(Select2::classname(), ['data' => $platforms]) ?>
         </div>
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-6">
             <?= $form->field($model, 'state')->widget(Select2::classname(), ['data' => $states]) ?>
-        </div> 
-        <div class="col-sm-12 col-md-4">
-        <?= $form->field($model, 'dlc_of_id')->label(Yii::t('app', 'Dlc of ID'))->widget(Select2::classname(), [
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <?= $form->field($model, 'emulated_platform_id')->widget(Select2::classname(), [
+              'data' => $platforms,
+              'options' => [
+                'placeholder' => '',
+              ],
+              'pluginOptions' => [
+                'allowClear' => true
+              ]
+            ]) ?>
+        </div>
+        <div class="col-sm-12 col-md-6">
+        <?= $form->field($model, 'dlc_of_id')->widget(Select2::classname(), [
               'data' => $games,
               'options' => [
                 'placeholder' => '',

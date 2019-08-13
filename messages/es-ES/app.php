@@ -25,7 +25,8 @@ return [
     'Created success' => 'Creado con éxito.',
     'Updated error' => 'Ha ocurrido un error al editar.',
     'Created error' => 'Ha ocurrido un error al crear.',
-    'Dlc of ID' => 'DLC de',
+    'DLC of ID' => 'DLC de',
     'DLCs' => 'DLCs: {count}',
     'DLC Platform' => '{name} (DLC)',
+    'Emulated Platform ID' => 'Plataforma emulada',
 ];

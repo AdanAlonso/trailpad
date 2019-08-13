@@ -9,7 +9,6 @@ Backlog for video games with Yii2
 
 ### High priority
 * Stats per platform and state
-* Virtual Console games
 
 ### Low priority
 * Automatic migrations when deploying to Heroku (instead of having to log in, run "composer install; php yii migrate"; investigate composer post-install-cmd scripting)

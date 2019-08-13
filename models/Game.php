@@ -70,7 +70,7 @@ class Game extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'platform_id', 'state'], 'required'],
-            [['platform_id', 'dlc_of_id'], 'integer'],
+            [['platform_id', 'dlc_of_id', 'emulated_platform_id'], 'integer'],
             [['title'], 'string', 'max' => 255],
             [['platform_id'], 'exist', 'skipOnError' => true, 'targetClass' => Platform::className(), 'targetAttribute' => ['platform_id' => 'id']],
             [['dlc_of_id'], 'exist', 'skipOnError' => true, 'targetClass' => Game::className(), 'targetAttribute' => ['dlc_of_id' => 'id']],
@@ -87,6 +87,8 @@ class Game extends \yii\db\ActiveRecord
             'platform_id' => Yii::t('app', 'Platform ID'),
             'title' => Yii::t('app', 'Title'),
             'state' => Yii::t('app', 'State'),
+            'dlc_of_id' => Yii::t('app', 'DLC of ID'),
+            'emulated_platform_id' => Yii::t('app', 'Emulated Platform ID'),
         ];
     }
 
@@ -96,6 +98,14 @@ class Game extends \yii\db\ActiveRecord
     public function getPlatform()
     {
         return $this->hasOne(Platform::className(), ['id' => 'platform_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEmulatedPlatform()
+    {
+        return $this->hasOne(Platform::className(), ['id' => 'emulated_platform_id']);
     }
 
     /**
