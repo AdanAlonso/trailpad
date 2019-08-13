@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 use yii\web\UploadedFile;
 use yii\helpers\BaseFileHelper;
 
@@ -20,6 +21,13 @@ class Game extends \yii\db\ActiveRecord
 {
 
     private static $uploads_folder = 'uploads/game/cover/';    
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
 
     /**
      * {@inheritdoc}

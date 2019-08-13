@@ -57,7 +57,7 @@ class GameSearch extends Game
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => ['title'=>SORT_ASC]]
+            'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]]
         ]);
 
         $dataProvider->sort->attributes['platform.name'] = [
